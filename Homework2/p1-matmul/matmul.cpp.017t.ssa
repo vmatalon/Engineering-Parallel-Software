@@ -1,0 +1,200 @@
+
+;; Function void matmuld(double**, double**, double**) (_Z7matmuldPPdS0_S0_)
+
+
+
+Symbols to be put in SSA form
+
+{ .MEM }
+
+
+Incremental SSA update started at block: 0
+
+Number of blocks in CFG: 3
+Number of blocks to update: 2 ( 67%)
+
+
+
+void matmuld(double**, double**, double**) (double * * a, double * * b, double * * c)
+{
+  struct .omp_data_s.0 .omp_data_o.2;
+
+<bb 2>:
+  .omp_data_o.2.a = a_1(D);
+  .omp_data_o.2.b = b_2(D);
+  .omp_data_o.2.c = c_3(D);
+  __builtin_GOMP_parallel_start (_Z7matmuldPPdS0_S0_._omp_fn.0, &.omp_data_o.2, 0);
+  _Z7matmuldPPdS0_S0_._omp_fn.0 (&.omp_data_o.2);
+  __builtin_GOMP_parallel_end ();
+  a_4 = .omp_data_o.2.a;
+  b_5 = .omp_data_o.2.b;
+  c_6 = .omp_data_o.2.c;
+  return;
+
+}
+
+
+
+;; Function <built-in> (_Z7matmuldPPdS0_S0_._omp_fn.0)
+
+
+
+Symbols to be put in SSA form
+
+{ .MEM }
+
+
+Incremental SSA update started at block: 0
+
+Number of blocks in CFG: 14
+Number of blocks to update: 11 ( 79%)
+
+
+
+<built-in> (struct .omp_data_s.0 * .omp_data_i)
+{
+  bool D.2223;
+  double D.2222;
+  double D.2221;
+  double D.2220;
+  double * D.2219;
+  double * D.2218;
+  double * * D.2217;
+  double * * D.2216;
+  double D.2215;
+  double * D.2214;
+  long unsigned int D.2213;
+  long unsigned int D.2212;
+  double * D.2211;
+  double * * D.2210;
+  double * * D.2209;
+  double D.2208;
+  double * * D.2207;
+  double * D.2206;
+  long unsigned int D.2205;
+  long unsigned int D.2204;
+  double * D.2203;
+  double * * D.2202;
+  double * * D.2201;
+  long unsigned int D.2200;
+  long unsigned int D.2199;
+  int i;
+  long int D.2197;
+  int j;
+  long int D.2195;
+  int k;
+  long int D.2193;
+  long int .tem.6;
+  long int .iend0.5;
+  long int .iter.1;
+  bool D.2189;
+  long int .iend0.4;
+  long int .istart0.3;
+
+<bb 13>:
+
+<bb 3>:
+  D.2189_5 = __builtin_GOMP_loop_static_start (0, 1073741824, 1, 0, &.istart0.3, &.iend0.4);
+  if (D.2189_5 != 0)
+    goto <bb 8>;
+  else
+    goto <bb 5>;
+
+<bb 8>:
+  .iter.1_6 = .istart0.3;
+  .iend0.5_7 = .iend0.4;
+  .tem.6_8 = .iter.1_6;
+  D.2193_9 = .tem.6_8 % 1024;
+  k_10 = (int) D.2193_9;
+  .tem.6_11 = .tem.6_8 / 1024;
+  D.2195_12 = .tem.6_11 % 1024;
+  j_13 = (int) D.2195_12;
+  .tem.6_14 = .tem.6_11 / 1024;
+  D.2197_15 = .tem.6_14 % 1024;
+  i_16 = (int) D.2197_15;
+
+<bb 4>:
+  # .iter.1_1 = PHI <.iter.1_6(8), .iter.1_55(12), .iter.1_55(10), .iter.1_55(11)>
+  # k_2 = PHI <k_10(8), k_58(12), k_57(10), k_58(11)>
+  # j_3 = PHI <j_13(8), j_60(12), j_3(10), j_59(11)>
+  # i_4 = PHI <i_16(8), i_61(12), i_4(10), i_4(11)>
+  D.2199_17 = (long unsigned int) i_4;
+  D.2200_18 = D.2199_17 * 8;
+  D.2201_20 = .omp_data_i_19(D)->c;
+  D.2202_21 = D.2201_20 + D.2200_18;
+  D.2203_22 = *D.2202_21;
+  D.2204_23 = (long unsigned int) j_3;
+  D.2205_24 = D.2204_23 * 8;
+  D.2206_25 = D.2203_22 + D.2205_24;
+  D.2199_26 = (long unsigned int) i_4;
+  D.2200_27 = D.2199_26 * 8;
+  D.2207_28 = .omp_data_i_19(D)->c;
+  D.2202_29 = D.2207_28 + D.2200_27;
+  D.2203_30 = *D.2202_29;
+  D.2204_31 = (long unsigned int) j_3;
+  D.2205_32 = D.2204_31 * 8;
+  D.2206_33 = D.2203_30 + D.2205_32;
+  D.2208_34 = *D.2206_33;
+  D.2199_35 = (long unsigned int) i_4;
+  D.2200_36 = D.2199_35 * 8;
+  D.2209_37 = .omp_data_i_19(D)->a;
+  D.2210_38 = D.2209_37 + D.2200_36;
+  D.2211_39 = *D.2210_38;
+  D.2212_40 = (long unsigned int) k_2;
+  D.2213_41 = D.2212_40 * 8;
+  D.2214_42 = D.2211_39 + D.2213_41;
+  D.2215_43 = *D.2214_42;
+  D.2212_44 = (long unsigned int) k_2;
+  D.2213_45 = D.2212_44 * 8;
+  D.2216_46 = .omp_data_i_19(D)->b;
+  D.2217_47 = D.2216_46 + D.2213_45;
+  D.2218_48 = *D.2217_47;
+  D.2204_49 = (long unsigned int) j_3;
+  D.2205_50 = D.2204_49 * 8;
+  D.2219_51 = D.2218_48 + D.2205_50;
+  D.2220_52 = *D.2219_51;
+  D.2221_53 = D.2215_43 * D.2220_52;
+  D.2222_54 = D.2208_34 + D.2221_53;
+  *D.2206_33 = D.2222_54;
+  .iter.1_55 = .iter.1_1 + 1;
+  if (.iter.1_55 < .iend0.5_7)
+    goto <bb 10>;
+  else
+    goto <bb 9>;
+
+<bb 9>:
+  D.2223_56 = __builtin_GOMP_loop_static_next (&.istart0.3, &.iend0.4);
+  if (D.2223_56 != 0)
+    goto <bb 8>;
+  else
+    goto <bb 5>;
+
+<bb 10>:
+  k_57 = k_2 + 1;
+  if (k_57 <= 1023)
+    goto <bb 4>;
+  else
+    goto <bb 11>;
+
+<bb 11>:
+  k_58 = 0;
+  j_59 = j_3 + 1;
+  if (j_59 <= 1023)
+    goto <bb 4>;
+  else
+    goto <bb 12>;
+
+<bb 12>:
+  j_60 = 0;
+  i_61 = i_4 + 1;
+  goto <bb 4>;
+
+<bb 5>:
+  __builtin_GOMP_loop_end_nowait ();
+
+<bb 6>:
+  return;
+
+}
+
+
